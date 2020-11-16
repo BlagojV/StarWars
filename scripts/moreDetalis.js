@@ -11,18 +11,19 @@ function getMovies(){
         responseText:'JSON',
         url, success: function(movie){
 
-                str +='<h3>Movie title:'+movie.title+'</h3>\n' +
-                    '            <p>Director: '+movie.director+'</p>\n' +
-                    '            <p>Producer: '+movie.producer+'</p>\n' +
-                    '            <p>Realise date: '+movie.release_date+'</p>\n' +
-                    '            <p>Character:</p>\n' +
-                    '<div id="people_names"></div>';
+                str += `<h3>Movie title:${movie.title}</h3>
+                                <p>Director: ${movie.director}</p>
+                               <p>Producer: ${movie.producer}</p>
+                                <p>Realise date: ${movie.release_date}</p>
+                                <p>Character:</p>
+                    <div id="people_names"></div>`;
 
             document.getElementById('more_details').innerHTML=str;
             getCharacters(movie);
 
         }});
 }
+
 
 function getCharacters(movie)
 {
